@@ -27,9 +27,12 @@
   parsep=0pt
 }
 
-\newcommand{\resumesection}[1]{%
+\newcommand{\resumeheader}[1]{%
   \vspace{7pt}
   {\large\bfseries\color{accent}#1}\par
+}
+
+\newcommand{\separator}[0]{%
   \vspace{2pt}\color{line}\rule{\linewidth}{0.5pt}\color{text}\par\vspace{3pt}
 }
 
@@ -46,30 +49,30 @@
 
 \begin{document}
 
-\begin{minipage}[c]{0.80\textwidth}
+\begin{minipage}[c]{0.5\textwidth}
   {\fontsize{25}{30}\selectfont\bfseries 傅泓睿}\par
-  \vspace{5pt}
-  {\large\color{accent}\bfseries 软件工程}\par
-  \vspace{7pt}
+  \vspace{12pt}
   上海交通大学 · 计算机学院（网络空间安全学院、密码学院）\par
   \vspace{2pt}
-  \textcolor{secondary}{本科二年级}
+  \textcolor{secondary}{软件工程 · 本科二年级}
 \end{minipage}%
 \hfill
-\begin{minipage}[c]{0.15\textwidth}
+\begin{minipage}[c]{0.5\textwidth}
   \raggedleft
-  \includegraphics[width=2.55cm,trim=650 1432 1474 1400,clip]{assets/me.JPG}
+  \includegraphics[width=4cm,trim=400 200 400 1300,clip]{assets/me.JPG}
 \end{minipage}
 
 \vspace{3pt}
 \color{accent}\rule{\linewidth}{1pt}\color{text}\par
 
-\resumesection{教育经历}
+\resumeheader{教育经历}
 \datedentry{2024.09 -- 2025.06}{\textbf{上海交通大学 · 原密西根学院（现浦江国际学院）}}
 \vspace{3pt}
 \datedentry{2025.09 -- 至今}{\textbf{上海交通大学 · 计算机学院}\\[-1pt]\textcolor{secondary}{降转至软件工程专业（网络空间安全学院、密码学院）}}
 
-\resumesection{获奖经历}
+\separator
+
+\resumeheader{获奖经历}
 \datedentry{2024.03 -- 2025.06}{\textbf{《Ghostbust Hotline》· Elm 语言 2D 地牢射击游戏}\\[-1pt]\textcolor{secondary}{密西根学院冬季设计展一等奖}}
 \vspace{3pt}
 \datedentry{2026.01 -- 2026.02}{\textbf{美国大学生数学建模竞赛（MCM/ICM）}\\[-1pt]\textcolor{secondary}{Honorable Mention}}
@@ -80,12 +83,16 @@
   \item RoboMaster 深圳全国赛三十二强、二等奖
 \end{itemize}
 
-\resumesection{语言能力}
+\separator
+
+\resumeheader{语言能力}
 \datedentry{2025.03}{\textbf{TOEFL}\hspace{1em}100 分}
 \vspace{2pt}
 \datedentry{2025.12}{\textbf{全国大学英语六级考试（CET-6）}\hspace{1em}605 分}
 
-\resumesection{技术能力}
+\separator
+
+\resumeheader{技术能力}
 \skillgroup{1. 编程语言}{
   \item 有较为扎实的 C 基础，以及一定的现代 C++ 基础和编程经验
   \item 较为熟悉 Python
