@@ -1,0 +1,109 @@
+\documentclass[10pt,a4paper,fontset=none]{ctexart}
+
+\usepackage[a4paper,top=1.2cm,bottom=1.2cm,left=1.5cm,right=1.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+
+\setCJKmainfont{Noto Sans CJK SC}
+\setmainfont{Noto Sans CJK SC}
+
+\definecolor{accent}{HTML}{9E1B32}
+\definecolor{text}{HTML}{24272C}
+\definecolor{secondary}{HTML}{626B78}
+\definecolor{line}{HTML}{D8DCE2}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\color{text}
+
+\setlist[itemize]{
+  leftmargin=1.45em,
+  label=\textcolor{accent}{\small\textbullet},
+  topsep=2pt,
+  itemsep=1pt,
+  parsep=0pt
+}
+
+\newcommand{\resumesection}[1]{%
+  \vspace{7pt}
+  {\large\bfseries\color{accent}#1}\par
+  \vspace{2pt}\color{line}\rule{\linewidth}{0.5pt}\color{text}\par\vspace{3pt}
+}
+
+\newcommand{\datedentry}[2]{%
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X >{\raggedleft\arraybackslash}p{3.4cm}@{}}
+    #2 & \textcolor{secondary}{#1}
+  \end{tabularx}\par
+}
+
+\newcommand{\skillgroup}[2]{%
+  \textbf{#1}
+  \begin{itemize}#2\end{itemize}
+}
+
+\begin{document}
+
+\begin{minipage}[c]{0.80\textwidth}
+  {\fontsize{25}{30}\selectfont\bfseries 傅泓睿}\par
+  \vspace{5pt}
+  {\large\color{accent}\bfseries 软件工程}\par
+  \vspace{7pt}
+  上海交通大学 · 计算机学院（网络空间安全学院、密码学院）\par
+  \vspace{2pt}
+  \textcolor{secondary}{本科二年级}
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{0.15\textwidth}
+  \raggedleft
+  \includegraphics[width=2.55cm,trim=650 1432 1474 1400,clip]{assets/me.JPG}
+\end{minipage}
+
+\vspace{3pt}
+\color{accent}\rule{\linewidth}{1pt}\color{text}\par
+
+\resumesection{教育经历}
+\datedentry{2024.09 -- 2025.06}{\textbf{上海交通大学 · 原密西根学院（现浦江国际学院）}}
+\vspace{3pt}
+\datedentry{2025.09 -- 至今}{\textbf{上海交通大学 · 计算机学院}\\[-1pt]\textcolor{secondary}{降转至软件工程专业（网络空间安全学院、密码学院）}}
+
+\resumesection{获奖经历}
+\datedentry{2024.03 -- 2025.06}{\textbf{《Ghostbust Hotline》· Elm 语言 2D 地牢射击游戏}\\[-1pt]\textcolor{secondary}{密西根学院冬季设计展一等奖}}
+\vspace{3pt}
+\datedentry{2026.01 -- 2026.02}{\textbf{美国大学生数学建模竞赛（MCM/ICM）}\\[-1pt]\textcolor{secondary}{Honorable Mention}}
+\vspace{3pt}
+\datedentry{2025.06 -- 2026.08}{\textbf{RoboMaster 皓翊交龙战队 · 视觉部雷达组负责人}}
+\begin{itemize}
+  \item RoboMaster 长沙区域赛八强、一等奖
+  \item RoboMaster 深圳全国赛三十二强、二等奖
+\end{itemize}
+
+\resumesection{语言能力}
+\datedentry{2025.03}{\textbf{TOEFL}\hspace{1em}100 分}
+\vspace{2pt}
+\datedentry{2025.12}{\textbf{全国大学英语六级考试（CET-6）}\hspace{1em}605 分}
+
+\resumesection{技术能力}
+\skillgroup{1. 编程语言}{
+  \item 有较为扎实的 C 基础，以及一定的现代 C++ 基础和编程经验
+  \item 较为熟悉 Python
+  \item 接触并了解 Java、Elm、Lua、JavaScript、TypeScript、Vue 等语言与技术
+}
+\skillgroup{2. 工程能力}{
+  \item 熟悉 Linux 操作系统，在实际工程中使用过 Ubuntu、Debian、Arch 等发行版
+  \item 熟练使用 Git/GitHub、SSH
+  \item 熟练使用 Claude Code、Codex、OpenCode 等 Agent 工具
+}
+\skillgroup{3. 机器人学}{
+  \item 较为熟悉相机、激光雷达、IMU 等常用硬件
+  \item 具备一定的 ROS 2 基础使用经验
+  \item 具备点云处理、坐标变换、单目视觉、YOLO、滤波器等基础与使用经验
+}
+\skillgroup{4. 论文撰写和语言能力}{
+  \item 熟悉 LaTeX
+  \item 有少量英文论文阅读经验
+}
+
+\end{document}
