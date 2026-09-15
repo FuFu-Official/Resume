@@ -22,14 +22,16 @@
 \setlist[itemize]{
   leftmargin=1.45em,
   label=\textcolor{accent}{\small\textbullet},
-  topsep=2pt,
-  itemsep=1pt,
+  topsep=1pt,
+  partopsep=0pt,
+  itemsep=0.5pt,
   parsep=0pt
 }
 
 \newcommand{\resumeheader}[1]{%
-  \vspace{7pt}
-  {\large\bfseries\color{accent}#1}\par
+  \vspace{6pt}
+  {\fontsize{12}{14}\selectfont\bfseries\color{accent}#1}\par
+  \vspace{9pt}
 }
 
 \newcommand{\separator}[0]{%
@@ -38,7 +40,7 @@
 
 \newcommand{\datedentry}[2]{%
   \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X >{\raggedleft\arraybackslash}p{3.4cm}@{}}
-    #2 & \textcolor{secondary}{#1}
+    \fontsize{10}{12}\selectfont #2 & \fontsize{9}{11}\selectfont\textcolor{secondary}{#1}
   \end{tabularx}\par
 }
 
@@ -52,9 +54,9 @@
 \begin{minipage}[c]{0.5\textwidth}
   {\fontsize{25}{30}\selectfont\bfseries 傅泓睿}\par
   \vspace{12pt}
-  上海交通大学 · 计算机学院（网络空间安全学院、密码学院）\par
+  {\fontsize{10}{12}\selectfont 上海交通大学 · 计算机学院（网络空间安全学院、密码学院）}\par
   \vspace{2pt}
-  \textcolor{secondary}{软件工程 · 本科二年级}
+  {\fontsize{10}{12}\selectfont\textcolor{secondary}{软件工程 · 本科二年级}}
 \end{minipage}%
 \hfill
 \begin{minipage}[c]{0.5\textwidth}
@@ -73,7 +75,7 @@
 \separator
 
 \resumeheader{获奖经历}
-\datedentry{2024.03 -- 2025.06}{\textbf{《Ghostbust Hotline》· Elm 语言 2D 地牢射击游戏}\\[-1pt]\textcolor{secondary}{密西根学院冬季设计展一等奖}}
+\datedentry{2024.03 -- 2025.06}{\textbf{Ghostbust Hotline · Elm 语言 2D 地牢射击游戏}\\[-1pt]\textcolor{secondary}{密西根学院冬季设计展一等奖}}
 \vspace{3pt}
 \datedentry{2026.01 -- 2026.02}{\textbf{美国大学生数学建模竞赛（MCM/ICM）}\\[-1pt]\textcolor{secondary}{Honorable Mention}}
 \vspace{3pt}
@@ -94,19 +96,19 @@
 
 \resumeheader{技术能力}
 \skillgroup{1. 编程语言}{
-  \item 有较为扎实的 C 基础，以及一定的现代 C++ 基础和编程经验
-  \item 较为熟悉 Python
-  \item 接触并了解 Java、Elm、Lua、JavaScript、TypeScript、Vue 等语言与技术
+  \item 有较为扎实的 C 基础，一定的现代 C++ 编程基础和经验
+  \item 熟悉 Python
+  \item 了解并接触过 Java、Elm、Lua、JavaScript、TypeScript、Vue 等语言
 }
 \skillgroup{2. 工程能力}{
   \item 熟悉 Linux 操作系统，在实际工程中使用过 Ubuntu、Debian、Arch 等发行版
-  \item 熟练使用 Git/GitHub、SSH
-  \item 熟练使用 Claude Code、Codex、OpenCode 等 Agent 工具
+  \item 熟练使用 Git/GitHub、SSH 等常用开发工具
+  \item 熟练使用 OpenCode、Codex、Claude Code 等 Agent 工具
 }
 \skillgroup{3. 机器人学}{
-  \item 较为熟悉相机、激光雷达、IMU 等常用硬件
-  \item 具备一定的 ROS 2 基础使用经验
-  \item 具备点云处理、坐标变换、单目视觉、YOLO、滤波器等基础与使用经验
+  \item 了解并接触过相机、激光雷达、IMU 等常用硬件
+  \item 具备一定点云处理、坐标变换、单目视觉、ROS2、YOLO、滤波器基础与使用经验
+  \item 具备一定实际工程中的调参和优化经验
 }
 \skillgroup{4. 论文撰写和语言能力}{
   \item 熟悉 LaTeX
