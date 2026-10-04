@@ -1,15 +1,17 @@
 \documentclass[10pt,a4paper,fontset=none]{ctexart}
 
+% Page setup and dependencies.
 \usepackage[a4paper,top=1.2cm,bottom=1.2cm,left=1.5cm,right=1.5cm]{geometry}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage{enumitem}
-\usepackage{tabularx}
 \usepackage{array}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{xcolor}
 
 \setCJKmainfont{Noto Sans CJK SC}
 \setmainfont{Noto Sans CJK SC}
 
+% Theme.
 \definecolor{accent}{HTML}{9E1B32}
 \definecolor{text}{HTML}{24272C}
 \definecolor{secondary}{HTML}{626B78}
@@ -18,6 +20,16 @@
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \color{text}
+
+% Shared typography and layout values.
+\newcommand{\namefont}{\fontsize{25}{30}\selectfont\bfseries}
+\newcommand{\bodyfont}{\fontsize{10}{12}\selectfont}
+\newcommand{\datefont}{\fontsize{9}{11}\selectfont}
+\newcommand{\sectionfont}{\fontsize{12}{14}\selectfont\bfseries}
+\newlength{\entrydatewidth}
+\setlength{\entrydatewidth}{3.4cm}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}p{\entrydatewidth}}
 
 \setlist[itemize]{
   leftmargin=1.45em,
@@ -28,73 +40,94 @@
   parsep=0pt
 }
 
-\newcommand{\resumeheader}[1]{%
-  \vspace{6pt}
-  {\fontsize{12}{14}\selectfont\bfseries\color{accent}#1}\par
-  \vspace{9pt}
+% Reusable resume components.
+\newcommand{\profileimage}{assets/me.JPG}
+
+\newcommand{\profile}[3]{%
+  \begin{minipage}[c]{0.5\textwidth}
+    {\namefont #1}\par
+    \vspace{12pt}
+    {\bodyfont #2}\par
+    \vspace{2pt}
+    {\bodyfont\textcolor{secondary}{#3}}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[c]{0.5\textwidth}
+    \raggedleft
+    \includegraphics[width=4cm,trim=400 200 400 1300,clip]{\profileimage}
+  \end{minipage}%
 }
 
-\newcommand{\separator}[0]{%
-  \vspace{2pt}\color{line}\rule{\linewidth}{0.5pt}\color{text}\par\vspace{3pt}
+\newcommand{\sectiontitle}[1]{%
+  \vspace{6pt}%
+  {\sectionfont\color{accent}#1}\par
+  \vspace{9pt}%
+}
+
+\newcommand{\sectionrule}{%
+  \vspace{2pt}%
+  \noindent\textcolor{line}{\rule{\linewidth}{0.5pt}}\par
+  \vspace{3pt}%
+}
+
+\newcommand{\toprule}{%
+  \noindent\textcolor{accent}{\rule{\linewidth}{1pt}}\par
 }
 
 \newcommand{\datedentry}[2]{%
-  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X >{\raggedleft\arraybackslash}p{3.4cm}@{}}
-    \fontsize{10}{12}\selectfont #2 & \fontsize{9}{11}\selectfont\textcolor{secondary}{#1}
+  \begin{tabularx}{\linewidth}{@{}L R@{}}
+    \bodyfont #2 & \datefont\textcolor{secondary}{#1}%
   \end{tabularx}\par
 }
 
+\newcommand{\entrygap}{\vspace{3pt}}
+\newcommand{\tightentrygap}{\vspace{2pt}}
+
 \newcommand{\skillgroup}[2]{%
-  \textbf{#1}
-  \begin{itemize}#2\end{itemize}
+  \textbf{#1}%
+  \begin{itemize}
+    #2%
+  \end{itemize}%
 }
 
 \begin{document}
 
-\begin{minipage}[c]{0.5\textwidth}
-  {\fontsize{25}{30}\selectfont\bfseries 傅泓睿}\par
-  \vspace{12pt}
-  {\fontsize{10}{12}\selectfont 上海交通大学 · 计算机学院（网络空间安全学院、密码学院）}\par
-  \vspace{2pt}
-  {\fontsize{10}{12}\selectfont\textcolor{secondary}{软件工程 · 本科二年级}}
-\end{minipage}%
-\hfill
-\begin{minipage}[c]{0.5\textwidth}
-  \raggedleft
-  \includegraphics[width=4cm,trim=400 200 400 1300,clip]{assets/me.JPG}
-\end{minipage}
+\profile
+  {傅泓睿}
+  {上海交通大学 · 计算机学院（网络空间安全学院、密码学院）}
+  {软件工程 · 本科二年级}
 
 \vspace{3pt}
-\color{accent}\rule{\linewidth}{1pt}\color{text}\par
+\toprule
 
-\resumeheader{教育经历}
+\sectiontitle{教育经历}
 \datedentry{2024.09 -- 2025.06}{\textbf{上海交通大学 · 原密西根学院（现浦江国际学院）}}
-\vspace{3pt}
+\entrygap
 \datedentry{2025.09 -- 至今}{\textbf{上海交通大学 · 计算机学院}\\[-1pt]\textcolor{secondary}{降转至软件工程专业（网络空间安全学院、密码学院）}}
 
-\separator
+\sectionrule
 
-\resumeheader{获奖经历}
+\sectiontitle{获奖经历}
 \datedentry{2024.03 -- 2025.06}{\textbf{Ghostbust Hotline · Elm 语言 2D 地牢射击游戏}\\[-1pt]\textcolor{secondary}{密西根学院2025夏季设计展 BEST PRESENTATION AWARD}}
-\vspace{3pt}
+\entrygap
 \datedentry{2026.01 -- 2026.02}{\textbf{美国大学生数学建模竞赛（MCM/ICM）}\\[-1pt]\textcolor{secondary}{Honorable Mention}}
-\vspace{3pt}
+\entrygap
 \datedentry{2025.06 -- 2026.08}{\textbf{RoboMaster 皓翊交龙战队 · 视觉部雷达组负责人}}
 \begin{itemize}
   \item RoboMaster 2026机甲大师超级对抗赛·区域赛（南部赛区）八强、一等奖
   \item RoboMaster 2026机甲大师超级对抗赛·全国赛三十二强、二等奖
 \end{itemize}
 
-\separator
+\sectionrule
 
-\resumeheader{语言能力}
+\sectiontitle{语言能力}
 \datedentry{2025.03}{\textbf{TOEFL}\hspace{1em}100 分}
-\vspace{2pt}
+\tightentrygap
 \datedentry{2025.12}{\textbf{全国大学英语六级考试（CET-6）}\hspace{1em}605 分}
 
-\separator
+\sectionrule
 
-\resumeheader{技术能力}
+\sectiontitle{技术能力}
 \skillgroup{1. 编程语言}{
   \item 有较为扎实的 C 基础，一定的现代 C++ 编程基础和经验
   \item 熟悉 Python
